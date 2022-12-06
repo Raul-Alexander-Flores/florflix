@@ -11,7 +11,7 @@ const Profile = () => {
   const { user } = useSelector(userSelector);
   
   const {data: favoriteMovies, refetch: refetchFavorites} = useGetListQuery({listName:'favorite/movies' , accountId: user.id, sessionId: localStorage.getItem('session_id'), page:1});
-  const {data: watchlistMovies, refetch: refetchWatchlisted} = useGetListQuery({listName:'favorite/movies' , accountId: user.id, sessionId: localStorage.getItem('session_id'), page:1})
+  const {data: watchlistMovies, refetch: refetchWatchlisted} = useGetListQuery({listName:'watchlist/movies' , accountId: user.id, sessionId: localStorage.getItem('session_id'), page:1})
   
   useEffect(()=>{
     refetchFavorites();

@@ -43,6 +43,12 @@ export default makeStyles((theme) => ({
         color: 'white !important',
         textDecoration: 'none',
       }
+    },
+    language: {
+
+        marginLeft: '5px',
+        fontWeight: "bold",
+      
     }
     
   

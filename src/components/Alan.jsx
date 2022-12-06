@@ -4,12 +4,15 @@ import { ColorModeContext } from '../utils/ToggleColorMode';
 import { fetchToken} from '../utils'
 import { useDispatch} from 'react-redux'
 import { useHistory} from 'react-router-dom'
-import{ selectGenreOrCategory, searchMovie} from '../features/currentGenreOrCategory'
+import{ selectGenreOrCategory, searchMovie} from '../features/currentGenreOrCategory';
+
+
 
 const useAlan = () => {
     const { setMode} = useContext(ColorModeContext)
     const dispatch = useDispatch();
     const history = useHistory();
+    
 
     useEffect(() => {
         alanBtn({

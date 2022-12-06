@@ -34,6 +34,7 @@ const Navbar = () => {
       if (token) {
         if (sessionIdFromLocalStorage) {
           const { data: userData } = await moviesApi.get(`/account?session_id=${sessionIdFromLocalStorage}`);
+          console.log(userData)
 
           dispatch(setUser(userData));
         } else {
@@ -74,6 +75,7 @@ const Navbar = () => {
             </IconButton>
             {!isMobile && <Search />}
             <div>
+            
               {!isAuthenticated ? (
                 <Button 
                 color='inherit'
@@ -82,6 +84,7 @@ const Navbar = () => {
 
                 </Button>
               ):(
+                
                 <Button
                 color='inherit'
                 component={Link}
@@ -90,12 +93,16 @@ const Navbar = () => {
                 onClick={() => {}}>
                 {!isMobile && <>
                   {user.username} Movies &nbsp;
-                </>}
+                </>}               
                 <Avatar
                 style={{width: 30, height: 30}}
                 alt="profile"
                 src={user.avatar}
-                ></Avatar>
+                ></Avatar> 
+                <div className={classes.language}>
+                  [{user.iso_639_1}]
+                </div>
+              
 
                 </Button>
               )}
